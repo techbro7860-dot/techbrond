@@ -89,7 +89,7 @@ export default async function AdminLayout({
           <div className="mb-5 rounded-xl bg-paper p-3 shadow-card lg:hidden">
             <div className="flex items-center justify-between gap-3 px-2">
               <div>
-                <Link href="/" aria-label="TechBro home"><BrandWordmark className="items-start [&>span:first-child]:text-[1.35rem]" /></Link>
+                <Link href="/" aria-label="Techbrand home"><BrandWordmark className="items-start" /></Link>
                 <span className="ml-2 text-xs font-medium uppercase tracking-wider text-accent-deep">Admin</span>
               </div>
               <Link href="/" className="text-xs font-medium text-accent-deep">View site</Link>

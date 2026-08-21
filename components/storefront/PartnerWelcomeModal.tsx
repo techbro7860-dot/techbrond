@@ -102,12 +102,12 @@ export function PartnerWelcomeModal() {
               <BadgePercent className="h-7 w-7 sm:h-8 sm:w-8" strokeWidth={1.8} aria-hidden="true" />
             </div>
 
-            <p className="mt-2 text-[10px] font-extrabold uppercase tracking-[0.2em] text-accent-deep sm:text-xs">TechBro Partner Programme</p>
+            <p className="mt-2 text-[10px] font-extrabold uppercase tracking-[0.2em] text-accent-deep sm:text-xs">Techbront Partner Programme</p>
             <h2 id="partner-modal-title" className="mx-auto mt-3 max-w-xl font-display text-[1.75rem] font-extrabold leading-[1.08] tracking-[-0.04em] text-ink sm:text-5xl">
               Recommend great software. <span className="text-accent">Earn up to 30%.</span>
             </h2>
             <p id="partner-modal-description" className="mx-auto mt-4 max-w-lg text-sm leading-6 text-ink-soft sm:text-base sm:leading-7">
-              Connect businesses with ready-to-launch TechBro products and receive your agreed share after every verified sale.
+              Connect businesses with ready-to-launch Techbront products and receive your agreed share after every verified sale.
             </p>
 
             <div className="mx-auto mt-5 grid max-w-xl grid-cols-3 divide-x divide-white/80 overflow-hidden rounded-2xl bg-white/45 text-center ring-1 ring-white/90 sm:mt-6">

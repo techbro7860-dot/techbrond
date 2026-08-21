@@ -41,7 +41,7 @@ export default function RegisterPage() {
   return (
     <main className="flex min-h-[70vh] items-center justify-center bg-gradient-to-b from-blue-50/60 to-white px-3 py-8 sm:px-6">
       <div className="w-full max-w-sm rounded-2xl border border-blue-100 bg-white p-4 shadow-lift sm:p-6">
-        <div className="text-center"><p className="label-muted">Join TechBro</p><h1 className="mt-1 font-display text-2xl font-black tracking-tight text-ink">Create an account</h1><p className="mt-1.5 text-sm text-ink-soft">Manage purchases and project services in one place.</p></div>
+        <div className="text-center"><p className="label-muted">Join Techbront</p><h1 className="mt-1 font-display text-2xl font-black tracking-tight text-ink">Create an account</h1><p className="mt-1.5 text-sm text-ink-soft">Manage purchases and project services in one place.</p></div>
 
         <form onSubmit={handleSubmit} className="editorial-form mt-5 space-y-3">
           <div>

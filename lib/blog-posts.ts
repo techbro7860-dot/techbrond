@@ -13,7 +13,7 @@ export const STARTER_BLOG_POSTS: BlogPostData[] = [
   {
     _id: "starter-launch", title: "How to launch business software without starting from zero", slug: "launch-business-software-faster",
     excerpt: "A practical framework for choosing a proven product, defining the right scope and reaching launch day with fewer surprises.",
-    category: "Business growth", coverImage: "/images/techbro-hero-ready-made.png", author: "TechBro Editorial", authorRole: "Product and launch team",
+    category: "Business growth", coverImage: "/images/techbro-hero-ready-made.png", author: "Techbront Editorial", authorRole: "Product and launch team",
     intro: "A successful software launch is rarely about writing the most code. It is about choosing the right starting point, understanding the workflow and making decisions in the right order.",
     sections: [
       { heading: "Start with the business workflow", body: "Before choosing technology, write down how customers discover you, what action they need to complete and what your team must manage afterwards. This becomes the smallest useful version of the product.\n\nA clear workflow prevents attractive but unnecessary features from taking over the launch.", image: "" },
@@ -24,7 +24,7 @@ export const STARTER_BLOG_POSTS: BlogPostData[] = [
   {
     _id: "starter-ownership", title: "What complete source-code ownership means for your company", slug: "complete-source-code-ownership",
     excerpt: "Understand the practical difference between owning your software and renting access to a platform.", category: "Ownership",
-    coverImage: "/images/techbro-hero-source-code.png", author: "Kirti Gunjan", authorRole: "Founder, TechBro",
+    coverImage: "/images/techbro-hero-source-code.png", author: "Kirti Gunjan", authorRole: "Founder, Techbront",
     intro: "Source-code ownership gives your business options. You can change providers, add features and control deployment without rebuilding the product from the beginning.",
     sections: [
       { heading: "Ownership removes platform lock-in", body: "When the repository, documentation and deployment access are transferred to you, your business is not dependent on one vendor to keep operating.", image: "" },
@@ -34,7 +34,7 @@ export const STARTER_BLOG_POSTS: BlogPostData[] = [
   {
     _id: "starter-checklist", title: "The pre-launch checklist every digital product needs", slug: "digital-product-pre-launch-checklist",
     excerpt: "The essential checks for payments, mobile screens, emails, analytics and customer support before you go live.", category: "Launch guides",
-    coverImage: "/images/techbro-hero-premium.png", author: "TechBro Editorial", authorRole: "Product and launch team",
+    coverImage: "/images/techbro-hero-premium.png", author: "Techbront Editorial", authorRole: "Product and launch team",
     intro: "Launch day should confirm work already completed, not reveal problems for the first time. This checklist focuses on the paths that affect real customers.",
     sections: [
       { heading: "Test the complete customer journey", body: "Create a test account and move through discovery, checkout, confirmation and support. Test success and failure states on both desktop and a real phone.", image: "" },
@@ -45,7 +45,7 @@ export const STARTER_BLOG_POSTS: BlogPostData[] = [
   {
     _id: "starter-budget", title: "How to budget for a website beyond the listed price", slug: "website-budget-beyond-listed-price",
     excerpt: "A clear breakdown of product cost, hosting, integrations, maintenance and optional custom development.", category: "Planning",
-    coverImage: "/images/techbro-software-showcase.png", author: "TechBro Editorial", authorRole: "Business solutions team",
+    coverImage: "/images/techbro-software-showcase.png", author: "Techbront Editorial", authorRole: "Business solutions team",
     intro: "The product price is only one part of a responsible software budget. Separating one-time work from recurring infrastructure makes proposals easier to compare.",
     sections: [
       { heading: "Separate build costs from operating costs", body: "The build covers the product and agreed customisation. Domains, hosting, email delivery and paid APIs normally renew independently.", image: "" },

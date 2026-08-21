@@ -43,12 +43,12 @@ export async function generateMetadata({
   params: { slug: string };
 }): Promise<Metadata> {
   const industry = await getIndustry(params.slug);
-  if (!industry) return { title: "Industry not found | TechBro" };
+  if (!industry) return { title: "Industry not found | Techbront" };
 
   return {
     title:
       industry.seo?.metaTitle ||
-      `${industry.name} software with source code | TechBro`,
+      `${industry.name} software with source code | Techbront`,
     description:
       industry.seo?.metaDescription ||
       industry.description ||

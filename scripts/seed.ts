@@ -1,5 +1,5 @@
 /**
- * Seed script — TechBro catalogue.
+ * Seed script — Techbront catalogue.
  *
  * Populates: 1 admin user, 10 industries, 22 technology tags, 10 sample
  * products, 2 coupons.
@@ -290,7 +290,7 @@ async function seed() {
     );
   }
   await User.create({
-    name: "TechBro Admin",
+    name: "Techbront Admin",
     email: process.env.SEED_ADMIN_EMAIL || "admin@techbro.in",
     password: await bcrypt.hash(adminPassword, 12),
     role: "admin",
@@ -363,7 +363,7 @@ async function seed() {
         demo: {},
         provenance: "in_house",
         seo: {
-          metaTitle: `${product.title} — Ready-Made Source Code | TechBro`,
+          metaTitle: `${product.title} — Ready-Made Source Code | Techbront`,
           metaDescription: product.shortDescription.slice(0, 155),
         },
         isFeatured: index < 4,

@@ -18,7 +18,7 @@ export function customerAppointmentEmail(appointment: IAppointment): string {
   const topic = APPOINTMENT_TOPICS[appointment.topic];
   return emailShell(`
     <p style="margin:0 0 8px;color:#6d28d9;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase">Appointment confirmed</p>
-    <h1 style="margin:0 0 16px;font-size:25px">Your TechBro consultation is booked</h1>
+    <h1 style="margin:0 0 16px;font-size:25px">Your Techbront consultation is booked</h1>
     <p style="margin:0 0 20px;color:#4b5563;line-height:1.6">Hi ${escapeHtml(appointment.name)}, your ${escapeHtml(topic.toLowerCase())} is confirmed.</p>
     <div style="border:1px solid #e6e0f5;border-radius:14px;padding:18px;background:#faf9ff">
       <p style="margin:0 0 8px"><strong>Date and time:</strong><br>${escapeHtml(when)}</p>
@@ -53,14 +53,14 @@ export function appointmentCalendar(appointment: IAppointment): string {
   return [
     "BEGIN:VCALENDAR",
     "VERSION:2.0",
-    "PRODID:-//TechBro//Appointments//EN",
+    "PRODID:-//Techbront//Appointments//EN",
     "METHOD:PUBLISH",
     "BEGIN:VEVENT",
     `UID:${clean(String(appointment._id))}@techbro`,
     `DTSTAMP:${stamp(new Date())}`,
     `DTSTART:${stamp(new Date(appointment.startAt))}`,
     `DTEND:${stamp(new Date(appointment.endAt))}`,
-    `SUMMARY:${clean(`TechBro - ${APPOINTMENT_TOPICS[appointment.topic]}`)}`,
+    `SUMMARY:${clean(`Techbront - ${APPOINTMENT_TOPICS[appointment.topic]}`)}`,
     `DESCRIPTION:${clean(`Join the meeting: ${appointment.meetingUrl}`)}`,
     `URL:${clean(appointment.meetingUrl)}`,
     "END:VEVENT",
@@ -71,7 +71,7 @@ export function appointmentCalendar(appointment: IAppointment): string {
 export function cancellationEmail(appointment: IAppointment): string {
   return emailShell(`
     <p style="margin:0 0 8px;color:#6d28d9;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase">Appointment cancelled</p>
-    <h1 style="margin:0 0 16px;font-size:24px">Your TechBro consultation was cancelled</h1>
+    <h1 style="margin:0 0 16px;font-size:24px">Your Techbront consultation was cancelled</h1>
     <p style="margin:0 0 16px;color:#4b5563;line-height:1.6">The appointment scheduled for ${escapeHtml(formatAppointmentDate(new Date(appointment.startAt)))} is no longer active.</p>
     ${appointment.cancellationReason ? `<p style="margin:0;color:#4b5563"><strong>Reason:</strong> ${escapeHtml(appointment.cancellationReason)}</p>` : ""}
   `);

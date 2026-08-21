@@ -56,7 +56,7 @@ const BannerSchema = new Schema(
 
 const BrandSchema = new Schema(
   {
-    storeName: { type: String, default: "TechBro" },
+    storeName: { type: String, default: "Techbront" },
     tagline: { type: String, default: "" },
     logoUrl: { type: String, default: "" },
     faviconUrl: { type: String, default: "" },
@@ -66,7 +66,7 @@ const BrandSchema = new Schema(
 
 const SeoSchema = new Schema(
   {
-    metaTitle: { type: String, default: "Ready-made websites, apps and software | TechBro" },
+    metaTitle: { type: String, default: "Ready-made websites, apps and software | Techbront" },
     metaDescription: { type: String, default: "" },
   },
   { _id: false }
@@ -103,7 +103,7 @@ const AnnouncementSchema = new Schema(
 
 const HeroSchema = new Schema(
   {
-    title: { type: String, default: "Build and launch with TechBro" },
+    title: { type: String, default: "Build and launch with Techbront" },
     subtitle: { type: String, default: "Quality products, fair prices, fast shipping." },
     ctaText: { type: String, default: "Shop Now" },
     ctaLink: { type: String, default: "/shop" },

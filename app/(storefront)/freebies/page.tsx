@@ -6,8 +6,8 @@ import { FreeResourceCard } from "@/components/storefront/FreeResourceCard";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Free business resources, templates and guides | TechBro",
-  description: "Download practical TechBro guides, templates and founder resources at no cost.",
+  title: "Free business resources, templates and guides | Techbront",
+  description: "Download practical Techbront guides, templates and founder resources at no cost.",
   alternates: { canonical: "/freebies" },
 };
 

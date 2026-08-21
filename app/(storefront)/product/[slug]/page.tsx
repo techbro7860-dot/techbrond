@@ -54,8 +54,8 @@ async function getProduct(slug: string): Promise<DetailProduct | null> {
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const product = await getProduct(params.slug);
-  if (!product) return { title: "Product not found | TechBro" };
-  const title = product.seo?.metaTitle || `${product.title} — source code | TechBro`;
+  if (!product) return { title: "Product not found | Techbront" };
+  const title = product.seo?.metaTitle || `${product.title} — source code | Techbront`;
   const description = product.seo?.metaDescription || product.shortDescription;
   const image = product.seo?.ogImage || product.thumbnail || product.images?.[0];
   return { title, description, alternates: { canonical: `/product/${product.slug}` }, openGraph: { title, description, type: "website", images: image ? [image] : undefined } };
@@ -87,7 +87,7 @@ export default async function ProductDetailPage({ params }: { params: { slug: st
   const jsonLd = {
     "@context": "https://schema.org", "@type": "Product", name: product.title,
     description: product.shortDescription, category: product.industry?.name,
-    brand: { "@type": "Brand", name: "TechBro" },
+    brand: { "@type": "Brand", name: "Techbront" },
     offers: { "@type": "AggregateOffer", lowPrice: startingPrice, highPrice: Math.max(startingPrice, ...(product.packages ?? []).map((item) => item.price)), priceCurrency: "INR", offerCount: Math.max(1, product.packages?.length ?? 0), availability: "https://schema.org/InStock", url: `/product/${product.slug}` },
     ...(reviews.length ? { aggregateRating: { "@type": "AggregateRating", ratingValue: average, reviewCount: reviews.length } } : {}),
   };
@@ -128,7 +128,7 @@ export default async function ProductDetailPage({ params }: { params: { slug: st
                   ) : (
                     <div className="flex h-full flex-col justify-between p-5 text-white">
                       <span className="grid h-10 w-10 place-items-center rounded-xl bg-white/20 font-display text-xl font-bold backdrop-blur-sm">{product.title.charAt(0)}</span>
-                      <div><span className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/70">TechBro product</span><p className="mt-1 line-clamp-2 font-display text-lg font-bold leading-tight">{product.title}</p></div>
+                      <div><span className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/70">Techbront product</span><p className="mt-1 line-clamp-2 font-display text-lg font-bold leading-tight">{product.title}</p></div>
                     </div>
                   )}
                 </div>

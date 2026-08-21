@@ -28,7 +28,7 @@ export default async function AdminPartnersPage({ searchParams }: { searchParams
 
   return (
     <div>
-      <header className="mb-6"><p className="label">Partner programme</p><h1 className="mt-1 text-3xl font-extrabold tracking-tight text-ink sm:text-4xl">Partner registrations</h1><p className="mt-2 text-sm text-ink-soft">Review people who want to bring clients or sell TechBro products.</p></header>
+      <header className="mb-6"><p className="label">Partner programme</p><h1 className="mt-1 text-3xl font-extrabold tracking-tight text-ink sm:text-4xl">Partner registrations</h1><p className="mt-2 text-sm text-ink-soft">Review people who want to bring clients or sell Techbront products.</p></header>
       <div className="mb-4 flex flex-wrap gap-2">
         {tabs.map((tab) => <Link key={tab.label} href={tab.key ? `/admin/partners?status=${tab.key}` : "/admin/partners"} className={(searchParams.status ?? "") === tab.key ? "chip" : "chip-neutral"}>{tab.label}</Link>)}
       </div>

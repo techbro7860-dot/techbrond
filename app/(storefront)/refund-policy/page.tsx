@@ -3,7 +3,7 @@ import Link from "next/link";
 import { LegalPage, Clause } from "@/components/storefront/LegalPage";
 
 export const metadata: Metadata = {
-  title: "Refund policy | TechBro",
+  title: "Refund policy | Techbront",
   description:
     "When a refund is available on a digital software purchase, how to request one, and what happens to your licence and access afterwards.",
   alternates: { canonical: "/refund-policy" },

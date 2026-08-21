@@ -98,13 +98,13 @@ export interface SiteSettingsData {
  */
 export const DEFAULT_SETTINGS: SiteSettingsData = {
   brand: {
-    storeName: "TechBro",
+    storeName: "Techbront",
     tagline: "Quality products, fair prices, fast shipping.",
     logoUrl: "",
     faviconUrl: "",
   },
   seo: {
-    metaTitle: "Ready-made websites, apps and software | TechBro",
+    metaTitle: "Ready-made websites, apps and software | Techbront",
     metaDescription: "Built with Next.js, MongoDB, and Cloudinary",
   },
   theme: {
@@ -126,7 +126,7 @@ export const DEFAULT_SETTINGS: SiteSettingsData = {
   },
   home: {
     hero: {
-      title: "Build and launch with TechBro",
+      title: "Build and launch with Techbront",
       subtitle: "Quality products, fair prices, fast shipping.",
       ctaText: "Shop Now",
       ctaLink: "/shop",
@@ -179,7 +179,7 @@ export const DEFAULT_SETTINGS: SiteSettingsData = {
         ],
       },
     ],
-    copyrightText: "© {year} TechBro. All rights reserved.",
+    copyrightText: "© {year} Techbront. All rights reserved.",
   },
   contact: {
     email: "",
@@ -224,6 +224,27 @@ export function mergeSettings<T>(defaults: T, stored: unknown): T {
 }
 
 /**
+ * Existing installations may still have the former display name saved in
+ * MongoDB. Normalise only that exact piece of visible copy at read time;
+ * lowercase URLs, email addresses, asset paths and integration keys remain
+ * untouched.
+ */
+function replaceLegacyBrandText<T>(value: T): T {
+  if (typeof value === "string") {
+    return value.replaceAll("TechBro", "Techbront") as T;
+  }
+  if (Array.isArray(value)) {
+    return value.map((item) => replaceLegacyBrandText(item)) as T;
+  }
+  if (isPlainObject(value)) {
+    return Object.fromEntries(
+      Object.entries(value).map(([key, item]) => [key, replaceLegacyBrandText(item)])
+    ) as T;
+  }
+  return value;
+}
+
+/**
  * Reads the singleton settings doc, creating it with defaults on first call,
  * and always returns a plain, fully-populated SiteSettingsData object (defaults
  * merged under whatever is stored). Safe to call from any Server Component,
@@ -237,7 +258,7 @@ export async function getSiteSettings(): Promise<SiteSettingsData> {
       const created = await SiteSettings.create({ singletonKey: "site", ...DEFAULT_SETTINGS });
       doc = created.toObject();
     }
-    return mergeSettings(DEFAULT_SETTINGS, doc as unknown);
+    return replaceLegacyBrandText(mergeSettings(DEFAULT_SETTINGS, doc as unknown));
   } catch (err) {
     // Never let a settings/DB hiccup take down a page — fall back to defaults.
     console.error("getSiteSettings failed, using defaults:", err);

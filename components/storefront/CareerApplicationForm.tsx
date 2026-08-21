@@ -36,7 +36,7 @@ export function CareerApplicationForm() {
       <label><span className="label-muted">Department</span><select className="field mt-1" value={values.department} onChange={(e) => set("department", e.target.value)}><option>Engineering</option><option>Design</option><option>Marketing</option><option>Business Development</option><option>Customer Experience</option><option>Operations</option></select></label>
       <Field label="Experience" required placeholder="e.g. 3 years in product design" value={values.experience} onChange={(v) => set("experience", v)} />
       <Field label="Portfolio or résumé link" type="url" placeholder="https://" value={values.portfolio} onChange={(v) => set("portfolio", v)} />
-      <label className="sm:col-span-2"><span className="label-muted">Why would you like to work with TechBro?</span><textarea required minLength={30} rows={4} className="field mt-1 resize-y" value={values.message} onChange={(e) => set("message", e.target.value)} placeholder="Tell us what you do best and the kind of work you want to take on." /></label>
+      <label className="sm:col-span-2"><span className="label-muted">Why would you like to work with Techbront?</span><textarea required minLength={30} rows={4} className="field mt-1 resize-y" value={values.message} onChange={(e) => set("message", e.target.value)} placeholder="Tell us what you do best and the kind of work you want to take on." /></label>
     </div>
     {error && <p className="mt-3 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700">{error}</p>}
     <button disabled={busy} className="btn-primary mt-4 w-full sm:w-auto"><Send size={16} />{busy ? "Submitting…" : "Submit application"}</button>

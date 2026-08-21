@@ -3,9 +3,9 @@ import Link from "next/link";
 import { LegalPage, Clause } from "@/components/storefront/LegalPage";
 
 export const metadata: Metadata = {
-  title: "Terms & conditions | TechBro",
+  title: "Terms & conditions | Techbront",
   description:
-    "The terms that apply to using the TechBro website and buying software through it.",
+    "The terms that apply to using the Techbront website and buying software through it.",
   alternates: { canonical: "/terms" },
 };
 
@@ -20,7 +20,7 @@ export default function TermsPage() {
     >
       <Clause title="Who we are">
         <p>
-          TechBro is operated by Geoloide Private Limited, registered in India.
+          Techbront is operated by Geoloide Private Limited, registered in India.
           References to &ldquo;we&rdquo; and &ldquo;us&rdquo; mean that company.
         </p>
       </Clause>

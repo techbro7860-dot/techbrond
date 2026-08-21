@@ -3,7 +3,7 @@ import { Suspense } from "react";
 import { ContactForm } from "@/components/storefront/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact us | TechBro",
+  title: "Contact us | Techbront",
   description:
     "Questions about a product, or something you need built from scratch. We reply within one working day.",
   alternates: { canonical: "/contact" },

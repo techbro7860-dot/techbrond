@@ -138,7 +138,7 @@ export function AppointmentForm() {
           </p>
         </div>
         <div className="p-4 text-center sm:p-6">
-          <p className="text-sm leading-relaxed text-ink-soft">Meeting details and a calendar invitation have been sent to your email and to the TechBro team.</p>
+          <p className="text-sm leading-relaxed text-ink-soft">Meeting details and a calendar invitation have been sent to your email and to the Techbront team.</p>
           {confirmation.warning && <p className="mt-3 rounded-lg bg-amber-50 px-3 py-2 text-xs text-amber-800">{confirmation.warning}</p>}
           <a href={confirmation.meetingUrl} target="_blank" rel="noopener noreferrer" className="btn-primary mt-4 w-full sm:mt-5 sm:w-auto">
             <Video size={17} /> Join Google Meet
@@ -218,7 +218,7 @@ export function AppointmentForm() {
         <button type="submit" disabled={busy || loadingSlots || !values.time} className="btn-primary min-h-11 w-full text-base disabled:opacity-50 sm:min-h-12">
           <Clock3 size={17} /> {busy ? "Booking…" : "Confirm Google Meet"}
         </button>
-        <p className="text-center text-[11px] leading-tight text-ink-faint">You and the TechBro team receive the Google Meet link and calendar file by email.</p>
+        <p className="text-center text-[11px] leading-tight text-ink-faint">You and the Techbront team receive the Google Meet link and calendar file by email.</p>
       </div>
     </form>
   );

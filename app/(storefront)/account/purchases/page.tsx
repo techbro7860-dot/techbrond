@@ -9,7 +9,7 @@ import { getServerUser } from "@/lib/middleware/getServerUser";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Your purchases | TechBro",
+  title: "Your purchases | Techbront",
   robots: { index: false, follow: false },
 };
 
@@ -152,7 +152,7 @@ export default async function PurchasesPage() {
                   ) : (
                     <>
                       <span className="chip">Manual source delivery</span>
-                      <p className="mt-2 text-xs leading-relaxed text-ink-faint">The TechBro team will verify your order and share the source-code handover details directly with you.</p>
+                      <p className="mt-2 text-xs leading-relaxed text-ink-faint">The Techbront team will verify your order and share the source-code handover details directly with you.</p>
                       <Link href="/contact" className="mt-2 inline-block text-xs font-semibold text-accent-deep hover:underline">Contact support</Link>
                     </>
                   )}

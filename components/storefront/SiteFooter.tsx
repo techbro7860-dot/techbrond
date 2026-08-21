@@ -12,7 +12,7 @@ const GROUPS = [
     { href: "/contact?type=custom", label: "Custom development" },
   ] },
   { title: "Company", links: [
-    { href: "/about", label: "About TechBro" },
+    { href: "/about", label: "About Techbront" },
     { href: "/careers", label: "Careers & sell with us" },
     { href: "/partner-program", label: "Register as a partner" },
     { href: "/blog", label: "Blog" },
@@ -45,11 +45,11 @@ export async function SiteFooter() {
       <div className="mx-auto max-w-shell px-4 py-5 sm:px-6 sm:py-10">
         <div className="grid grid-cols-2 gap-x-5 gap-y-5 lg:grid-cols-[1.35fr_repeat(4,minmax(0,1fr))] lg:gap-8">
           <div className="col-span-2 lg:col-span-1">
-            <Link href="/" aria-label="TechBro home" className="inline-flex"><BrandWordmark tone="inverse" tagline className="items-start" /></Link>
+            <Link href="/" aria-label="Techbront home" className="inline-flex"><BrandWordmark tone="inverse" tagline className="items-start" /></Link>
             <p className="mt-2 max-w-sm text-xs leading-5 text-white/65 sm:mt-3 sm:text-sm sm:leading-6">Ready-made software with complete source-code ownership.</p>
             <div className="mt-3 flex gap-2 sm:mt-4">
-              <a href={`mailto:${settings.contact.email || "hello@techbro.in"}`} aria-label="Email TechBro" className="grid h-9 w-9 place-items-center rounded-lg border border-white/10 bg-white/5 text-blue-300 transition hover:border-blue-400/60 hover:bg-blue-400/10 hover:text-white"><Mail size={16} /></a>
-              <a href="https://wa.me/919356372353" target="_blank" rel="noopener noreferrer" aria-label="Message TechBro on WhatsApp" className="grid h-9 w-9 place-items-center rounded-lg border border-white/10 bg-white/5 text-slate-300 transition hover:border-emerald-400/50 hover:bg-emerald-500/10 hover:text-emerald-300"><MessageCircle size={16} /></a>
+              <a href={`mailto:${settings.contact.email || "hello@techbro.in"}`} aria-label="Email Techbront" className="grid h-9 w-9 place-items-center rounded-lg border border-white/10 bg-white/5 text-blue-300 transition hover:border-blue-400/60 hover:bg-blue-400/10 hover:text-white"><Mail size={16} /></a>
+              <a href="https://wa.me/919356372353" target="_blank" rel="noopener noreferrer" aria-label="Message Techbront on WhatsApp" className="grid h-9 w-9 place-items-center rounded-lg border border-white/10 bg-white/5 text-slate-300 transition hover:border-emerald-400/50 hover:bg-emerald-500/10 hover:text-emerald-300"><MessageCircle size={16} /></a>
               {socialLinks.map(({ href, label, Icon }) => (
                 <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className="grid h-9 w-9 place-items-center rounded-lg border border-white/10 bg-white/5 text-slate-300 transition hover:-translate-y-0.5 hover:border-blue-400/60 hover:bg-blue-400/10 hover:text-white">
                   <Icon size={16} />
@@ -69,7 +69,7 @@ export async function SiteFooter() {
         </div>
 
         <div className="mt-5 flex flex-col gap-2 border-t border-white/10 pt-3 text-[10px] text-slate-500 sm:mt-10 sm:flex-row sm:items-center sm:justify-between sm:pt-5 sm:text-xs">
-          <p>© {new Date().getFullYear()} TechBro. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Techbront. All rights reserved.</p>
           <div className="hidden flex-wrap gap-x-5 gap-y-2 sm:flex"><span>Source-code ownership</span><span>Secure checkout</span><span>India-first support</span></div>
         </div>
       </div>

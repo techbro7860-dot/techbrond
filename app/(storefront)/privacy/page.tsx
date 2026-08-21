@@ -3,9 +3,9 @@ import Link from "next/link";
 import { LegalPage, Clause } from "@/components/storefront/LegalPage";
 
 export const metadata: Metadata = {
-  title: "Privacy policy | TechBro",
+  title: "Privacy policy | Techbront",
   description:
-    "What personal data TechBro collects, why, how long it is kept, and how to have it deleted.",
+    "What personal data Techbront collects, why, how long it is kept, and how to have it deleted.",
   alternates: { canonical: "/privacy" },
 };
 

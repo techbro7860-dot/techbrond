@@ -27,7 +27,7 @@ import type { AddonType } from "@/types/catalog";
  *
  * `pricesIncludeTax` is read from InvoiceSettings rather than hardcoded, so
  * the charging engine and the invoice engine can never disagree about
- * whether ₹59,999 is inclusive or exclusive of tax. For TechBro it should be
+ * whether ₹59,999 is inclusive or exclusive of tax. For Techbront it should be
  * set to FALSE — these are B2B prices quoted ex-GST, and the product page
  * says "plus 18% GST".
  */

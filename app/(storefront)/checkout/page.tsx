@@ -3,7 +3,7 @@ import Script from "next/script";
 import { CheckoutClient } from "@/components/storefront/checkout/CheckoutClient";
 
 export const metadata: Metadata = {
-  title: "Checkout | TechBro",
+  title: "Checkout | Techbront",
   robots: { index: false, follow: false },
 };
 

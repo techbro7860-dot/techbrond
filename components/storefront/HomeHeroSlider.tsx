@@ -32,7 +32,7 @@ export function HomeHeroSlider({ slides }: { slides?: Banner[] }) {
     <div
       className="group relative w-full overflow-hidden"
       role="region"
-      aria-label="TechBro highlights"
+      aria-label="Techbront highlights"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       onFocusCapture={() => setPaused(true)}
@@ -50,7 +50,7 @@ export function HomeHeroSlider({ slides }: { slides?: Banner[] }) {
           const image = (
             <Image
               src={slide.image}
-              alt={slide.heading || slide.subheading || `TechBro banner ${index + 1}`}
+              alt={slide.heading || slide.subheading || `Techbront banner ${index + 1}`}
               fill
               priority={index === 0}
               sizes="100vw"

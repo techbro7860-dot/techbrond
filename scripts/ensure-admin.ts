@@ -24,7 +24,7 @@ async function ensureAdmin() {
     { email },
     {
       $set: {
-        name: "TechBro Admin",
+        name: "Techbront Admin",
         email,
         password: passwordHash,
         role: "admin",

@@ -65,7 +65,7 @@ export function PartnerLeadCard({ lead }: { lead: PartnerLead }) {
       <div className="mt-4 flex flex-wrap items-center gap-2 border-t border-rule-soft pt-3">
         <span className="chip-neutral capitalize">{status}</span>
         {ACTIONS[status]?.map((action) => <button key={action.value} type="button" disabled={busy} onClick={() => update(action.value)} className="text-xs font-semibold text-accent-deep hover:underline disabled:opacity-50">{action.label}</button>)}
-        <a href={`mailto:${lead.email}?subject=${encodeURIComponent("Your TechBro partner application")}`} className="ml-auto text-xs font-semibold text-accent-deep hover:underline">Reply by email</a>
+        <a href={`mailto:${lead.email}?subject=${encodeURIComponent("Your Techbront partner application")}`} className="ml-auto text-xs font-semibold text-accent-deep hover:underline">Reply by email</a>
       </div>
     </article>
   );

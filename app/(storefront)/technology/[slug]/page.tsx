@@ -39,11 +39,11 @@ export async function generateMetadata({
   params: { slug: string };
 }): Promise<Metadata> {
   const tech = await getTechnology(params.slug);
-  if (!tech) return { title: "Technology not found | TechBro" };
+  if (!tech) return { title: "Technology not found | Techbront" };
 
   return {
     title:
-      tech.seo?.metaTitle || `${tech.name} applications with source code | TechBro`,
+      tech.seo?.metaTitle || `${tech.name} applications with source code | Techbront`,
     description:
       tech.seo?.metaDescription ||
       tech.description ||

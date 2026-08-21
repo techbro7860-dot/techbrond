@@ -49,7 +49,7 @@ export async function sendVerificationEmail(
 
   await sendEmail({
     to: email,
-    subject: "Confirm your email — TechBro",
+    subject: "Confirm your email — Techbront",
     html: `
 <div style="font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;max-width:560px;margin:0 auto;padding:24px;color:#18181b;">
   <h1 style="margin:0 0 16px;font-size:22px;font-weight:600;">Confirm your email</h1>
@@ -63,7 +63,7 @@ export async function sendVerificationEmail(
     </a>
   </p>
   <p style="margin:0;font-size:13px;line-height:1.6;color:#71717a;">
-    This link expires in 24 hours. If you didn't create a TechBro account,
+    This link expires in 24 hours. If you didn't create a Techbront account,
     ignore this email — nothing will happen.
   </p>
 </div>`.trim(),

@@ -6,7 +6,7 @@ import { getPublishedBlogPosts } from "@/lib/blog-posts";
 import { BlogCard } from "@/components/storefront/BlogCard";
 
 export const revalidate = 900;
-export const metadata: Metadata = { title: "Business, software and launch guides | TechBro Blog", description: "Practical guides for choosing, launching and growing business software.", alternates: { canonical: "/blog" } };
+export const metadata: Metadata = { title: "Business, software and launch guides | Techbront Blog", description: "Practical guides for choosing, launching and growing business software.", alternates: { canonical: "/blog" } };
 
 export default async function BlogPage({ searchParams }: { searchParams: { q?: string; category?: string } }) {
   const allPosts = await getPublishedBlogPosts();
@@ -35,7 +35,7 @@ export default async function BlogPage({ searchParams }: { searchParams: { q?: s
           <Link href={`/blog/${featured.slug}`} className="relative order-1 min-h-44 overflow-hidden sm:min-h-60 lg:order-2">{featured.coverImage ? <Image src={featured.coverImage} alt="" fill priority sizes="(max-width: 1024px) 100vw, 46vw" className="object-cover" /> : <div className="h-full bg-accent" />}</Link>
         </article> : <div className="mt-10 rounded-2xl border border-dashed border-rule p-12 text-center text-sm text-ink-faint">No articles match your search.</div>}
 
-        {rest.length > 0 && <section className="mt-7 sm:mt-12" aria-labelledby="latest-blog-heading"><div className="flex items-end justify-between"><div><p className="label">Latest insights</p><h2 id="latest-blog-heading" className="mt-1 font-display text-xl font-extrabold text-ink sm:text-3xl">More from TechBro</h2></div><span className="text-[10px] text-ink-faint sm:text-xs">{posts.length} articles</span></div><div className="mt-4 grid gap-3 sm:mt-6 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">{rest.map((post) => <BlogCard key={post._id} post={post} />)}</div></section>}
+        {rest.length > 0 && <section className="mt-7 sm:mt-12" aria-labelledby="latest-blog-heading"><div className="flex items-end justify-between"><div><p className="label">Latest insights</p><h2 id="latest-blog-heading" className="mt-1 font-display text-xl font-extrabold text-ink sm:text-3xl">More from Techbront</h2></div><span className="text-[10px] text-ink-faint sm:text-xs">{posts.length} articles</span></div><div className="mt-4 grid gap-3 sm:mt-6 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">{rest.map((post) => <BlogCard key={post._id} post={post} />)}</div></section>}
       </div>
     </main>
   );

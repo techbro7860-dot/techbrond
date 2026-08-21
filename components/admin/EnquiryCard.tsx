@@ -140,7 +140,7 @@ export function EnquiryCard({
           </button>
         ))}
         <a
-          href={`mailto:${enquiry.email}?subject=${encodeURIComponent("Re: your enquiry — TechBro")}`}
+          href={`mailto:${enquiry.email}?subject=${encodeURIComponent("Re: your enquiry — Techbront")}`}
           className="ml-auto text-xs font-medium text-accent-deep hover:underline"
         >
           Reply by email

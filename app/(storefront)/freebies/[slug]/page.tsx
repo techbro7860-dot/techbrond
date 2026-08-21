@@ -9,7 +9,7 @@ export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const resource = await getFreeResourceBySlug(params.slug);
-  return resource ? { title: `${resource.title} — free download | TechBro`, description: resource.description || resource.subtitle, alternates: { canonical: `/freebies/${resource.slug}` } } : {};
+  return resource ? { title: `${resource.title} — free download | Techbront`, description: resource.description || resource.subtitle, alternates: { canonical: `/freebies/${resource.slug}` } } : {};
 }
 
 export default async function FreeResourceDetailPage({ params }: { params: { slug: string } }) {
@@ -19,7 +19,7 @@ export default async function FreeResourceDetailPage({ params }: { params: { slu
 
   const media = <div>
     <div className="overflow-hidden rounded-[10px] border border-rule bg-gradient-to-br from-[#071a3d] via-[#123b78] to-[#6596e4]">
-      {images[0] ? <img src={images[0]} alt={resource.title} className="h-auto max-h-[32rem] w-full object-contain" /> : <div className="flex aspect-[16/9] flex-col justify-end p-5 text-white sm:p-8"><FileText size={28} className="mb-3 opacity-70" /><p className="text-[10px] font-bold uppercase tracking-[.16em] text-blue-200">TechBro free resource</p><p className="mt-1.5 max-w-2xl font-display text-2xl font-semibold leading-tight sm:text-4xl">{resource.title}</p></div>}
+      {images[0] ? <img src={images[0]} alt={resource.title} className="h-auto max-h-[32rem] w-full object-contain" /> : <div className="flex aspect-[16/9] flex-col justify-end p-5 text-white sm:p-8"><FileText size={28} className="mb-3 opacity-70" /><p className="text-[10px] font-bold uppercase tracking-[.16em] text-blue-200">Techbront free resource</p><p className="mt-1.5 max-w-2xl font-display text-2xl font-semibold leading-tight sm:text-4xl">{resource.title}</p></div>}
     </div>
     {images.length > 1 && <div className="mt-2 grid grid-cols-3 gap-2">{images.slice(1, 4).map((image) => <div key={image} className="overflow-hidden rounded-[10px] border border-rule bg-paper-alt"><img src={image} alt="Resource preview" className="aspect-[4/3] h-full w-full object-cover" /></div>)}</div>}
   </div>;

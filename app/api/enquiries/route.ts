@@ -117,7 +117,7 @@ export async function POST(req: NextRequest) {
 
     const customerDelivery = sendEmail({
       to: email,
-      subject: "We've got your message — TechBro",
+      subject: "We've got your message — Techbront",
       html: enquiryReceivedEmail(name),
     });
 

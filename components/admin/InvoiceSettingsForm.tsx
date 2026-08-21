@@ -8,7 +8,7 @@ import { INDIAN_STATES } from "@/lib/states";
  * Seller identity and tax configuration.
  *
  * The `pricesIncludeTax` control is the dangerous one and is presented as a
- * choice with consequences spelled out, not a bare toggle. For TechBro it
+ * choice with consequences spelled out, not a bare toggle. For Techbront it
  * must be OFF: prices are quoted ex-GST and the product page says "plus 18%
  * GST". Left on, a ₹89,999 sale is treated as ₹76,270 plus tax and you
  * absorb the difference on every order, with nothing in the interface
@@ -213,7 +213,7 @@ export function InvoiceSettingsForm({ initial }: { initial: Settings }) {
               hint={
                 settings.tax.pricesIncludeTax
                   ? "A ₹89,999 product is being treated as ₹76,270 plus ₹13,729 tax — you are absorbing the GST. Your product pages say prices exclude GST, so this should almost certainly be off."
-                  : "Correct for TechBro. GST is added on top of the listed price at checkout."
+                  : "Correct for Techbront. GST is added on top of the listed price at checkout."
               }
               danger={settings.tax.pricesIncludeTax}
             />

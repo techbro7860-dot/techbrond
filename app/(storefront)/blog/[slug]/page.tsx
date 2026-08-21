@@ -10,7 +10,7 @@ export const revalidate = 900;
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const post = await getBlogPostBySlug(params.slug);
   return post ? {
-    title: `${post.title} | TechBro Blog`, description: post.excerpt,
+    title: `${post.title} | Techbront Blog`, description: post.excerpt,
     alternates: { canonical: `/blog/${post.slug}` },
     openGraph: { title: post.title, description: post.excerpt, images: post.coverImage ? [post.coverImage] : [] },
   } : {};

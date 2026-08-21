@@ -137,7 +137,7 @@ export function CheckoutClient() {
         amount: payment.amount,
         currency: payment.currency,
         order_id: payment.razorpayOrderId,
-        name: "TechBro",
+        name: "Techbront",
         description: payment.orderNumber,
         prefill: payment.prefill,
         handler: () => {

@@ -66,7 +66,7 @@ export function PartnerRegistrationForm() {
       <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-7 text-center shadow-card">
         <CheckCircle2 className="mx-auto h-10 w-10 text-emerald-600" />
         <h2 className="mt-3 font-display text-2xl font-black tracking-[-0.025em] text-ink">Application received</h2>
-        <p className="mx-auto mt-2 max-w-md text-sm leading-6 text-ink-soft">We emailed your confirmation. The TechBro team will review your plan and contact you with the next steps.</p>
+        <p className="mx-auto mt-2 max-w-md text-sm leading-6 text-ink-soft">We emailed your confirmation. The Techbront team will review your plan and contact you with the next steps.</p>
       </div>
     );
   }
@@ -74,7 +74,7 @@ export function PartnerRegistrationForm() {
   return (
     <form onSubmit={submit} noValidate className="editorial-form overflow-hidden rounded-2xl border border-blue-100 bg-white shadow-lift">
       <header className="flex items-start justify-between gap-4 border-b border-blue-100 bg-gradient-to-r from-blue-50/90 to-white px-3.5 py-3 sm:px-5">
-        <div><p className="label-muted">Partner application</p><h2 className="mt-1 font-display text-xl font-black leading-tight tracking-[-0.025em] text-ink sm:text-2xl">Tell us how you want to work with TechBro</h2></div>
+        <div><p className="label-muted">Partner application</p><h2 className="mt-1 font-display text-xl font-black leading-tight tracking-[-0.025em] text-ink sm:text-2xl">Tell us how you want to work with Techbront</h2></div>
         <span className="hidden rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-emerald-700 sm:inline-flex">Free to apply</span>
       </header>
       <div className="space-y-3 p-3 sm:p-5">
@@ -96,8 +96,8 @@ export function PartnerRegistrationForm() {
           <span className="label-muted">How do you want to partner? <span className="text-accent-deep">*</span></span>
           <select required value={values.partnershipType} onChange={(event) => set("partnershipType", event.target.value)} className={`field mt-1 h-10 text-base sm:text-sm ${errors.partnershipType ? "field-error" : ""}`}>
             <option value="">Select an option</option>
-            <option value="refer_clients">Refer clients to TechBro</option>
-            <option value="sell_products">Sell TechBro products</option>
+            <option value="refer_clients">Refer clients to Techbront</option>
+            <option value="sell_products">Sell Techbront products</option>
             <option value="both">Refer clients and sell products</option>
           </select>
           {errors.partnershipType && <span className="mt-1 block text-xs text-red-700">{errors.partnershipType}</span>}
@@ -112,7 +112,7 @@ export function PartnerRegistrationForm() {
         <legend className="mb-2 flex items-center gap-2 text-[11px] font-extrabold uppercase tracking-[0.12em] text-accent-deep"><Target size={14} /> Your plan</legend>
         <label className="block sm:col-span-2">
           <span className="label-muted">How will you find clients and sell our products? <span className="text-accent-deep">*</span></span>
-          <textarea required rows={3} maxLength={2000} value={values.message} onChange={(event) => set("message", event.target.value)} placeholder="Briefly explain your approach, target customers and how you plan to promote TechBro." className={`field mt-1 resize-y py-2 text-base sm:text-sm ${errors.message ? "field-error" : ""}`} />
+          <textarea required rows={3} maxLength={2000} value={values.message} onChange={(event) => set("message", event.target.value)} placeholder="Briefly explain your approach, target customers and how you plan to promote Techbront." className={`field mt-1 resize-y py-2 text-base sm:text-sm ${errors.message ? "field-error" : ""}`} />
           {errors.message && <span className="mt-1 block text-xs text-red-700">{errors.message}</span>}
         </label>
       </fieldset>

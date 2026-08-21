@@ -3,9 +3,9 @@ import Link from "next/link";
 import { LegalPage, Clause } from "@/components/storefront/LegalPage";
 
 export const metadata: Metadata = {
-  title: "Licence agreement | TechBro",
+  title: "Licence agreement | Techbront",
   description:
-    "What you may and may not do with source code purchased from TechBro — deployment rights, modification, resale restrictions and ownership.",
+    "What you may and may not do with source code purchased from Techbront — deployment rights, modification, resale restrictions and ownership.",
   alternates: { canonical: "/licence" },
 };
 
@@ -30,7 +30,7 @@ export default function LicencePage() {
       eyebrow="Legal"
       title="Licence agreement"
       updated="12 August 2026"
-      intro="This sets out what you can do with source code bought from TechBro. It applies from the moment payment clears, and a separate licence is granted for each product you buy."
+      intro="This sets out what you can do with source code bought from Techbront. It applies from the moment payment clears, and a separate licence is granted for each product you buy."
     >
       <Clause title="What you get">
         <p>
@@ -159,7 +159,7 @@ export default function LicencePage() {
       <Clause title="Governing law">
         <p>
           This agreement is governed by the laws of India, and the courts of
-          Pune, Maharashtra have exclusive jurisdiction. TechBro is operated by
+          Pune, Maharashtra have exclusive jurisdiction. Techbront is operated by
           Geoloide Private Limited.
         </p>
       </Clause>

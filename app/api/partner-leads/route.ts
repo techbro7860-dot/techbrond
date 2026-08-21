@@ -80,7 +80,7 @@ export async function POST(req: NextRequest) {
     // does not spend two SMTP round trips waiting in sequence.
     const customerDelivery = sendEmail({
       to: email,
-      subject: "Welcome to the TechBro Partner Programme",
+      subject: "Welcome to the Techbront Partner Programme",
       html: `
         <div style="font-family:Arial,sans-serif;max-width:560px;margin:auto;color:#081a3a">
           <h1 style="font-size:24px">Your partner application is registered.</h1>
@@ -97,7 +97,7 @@ export async function POST(req: NextRequest) {
     const adminDelivery = adminEmail
       ? sendEmail({
         to: adminEmail,
-        subject: "New TechBro partner registration",
+        subject: "New Techbront partner registration",
         html: `<p>A new partner application has been submitted.</p>
           <p><strong>Name:</strong> ${escapeHtml(name)}</p>
           <p><strong>Email:</strong> ${escapeHtml(email)}</p>

@@ -25,7 +25,7 @@ export function SiteStructuredData() {
   const organization = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "TechBro",
+    name: "Techbront",
     legalName: "Geoloide Private Limited",
     url: BASE_URL,
     logo: `${BASE_URL}/logo.png`,
@@ -48,7 +48,7 @@ export function SiteStructuredData() {
   const website = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "TechBro",
+    name: "Techbront",
     url: BASE_URL,
     potentialAction: {
       "@type": "SearchAction",

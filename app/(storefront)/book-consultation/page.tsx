@@ -5,7 +5,7 @@ import { QuickCallForm } from "@/components/storefront/QuickCallForm";
 
 export const metadata: Metadata = {
   title: "Book a call",
-  description: "Request a quick callback or schedule a 30-minute Google Meet with the TechBro team.",
+  description: "Request a quick callback or schedule a 30-minute Google Meet with the Techbront team.",
   alternates: { canonical: "/book-consultation" },
 };
 

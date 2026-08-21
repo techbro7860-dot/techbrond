@@ -52,7 +52,7 @@ import Technology from "@/models/Technology";
 export const revalidate = 900;
 
 export const metadata: Metadata = {
-  title: "Ready-made websites, apps and software | TechBro",
+  title: "Ready-made websites, apps and software | Techbront",
   description:
     "Explore ready-made websites, apps and business software with complete source code, customization and launch support.",
   alternates: { canonical: "/" },
@@ -171,7 +171,7 @@ const HOME_FAQS = [
     answer: "The 7-day target applies to eligible ready-made products with an agreed scope. Larger custom features or external integrations receive a separate written timeline.",
   },
   {
-    question: "Are there monthly TechBro platform fees?",
+    question: "Are there monthly Techbront platform fees?",
     answer: "No. Product licences are one-time purchases. Your own hosting, domain and any third-party services are separate recurring costs.",
   },
 ];
@@ -449,7 +449,7 @@ export default async function HomePage() {
                 </div>
 
                 <div className="flex min-w-0 flex-col items-center justify-center border-l border-[#9eb7d5] bg-gradient-to-br from-[#123b78] to-[#071a3d] p-4 text-center sm:p-6">
-                  <p className="font-display text-sm font-black uppercase tracking-[0.12em] text-white">With TechBro</p>
+                  <p className="font-display text-sm font-black uppercase tracking-[0.12em] text-white">With Techbront</p>
                   <ul className="mt-4 w-full space-y-3 text-xs font-bold leading-relaxed text-white sm:text-sm">
                     {["Online bookings", "One central dashboard", "Branded and launch-ready"].map((item) => (
                       <li key={item} className="flex min-h-9 items-center justify-center rounded-lg bg-white/10 px-1.5 shadow-sm ring-1 ring-white/20">{item}</li>
@@ -496,7 +496,7 @@ export default async function HomePage() {
           <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent" />
 
           <div className="relative">
-          <p className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-blue-200 sm:text-xs">Why choose TechBro</p>
+          <p className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-blue-200 sm:text-xs">Why choose Techbront</p>
           <h2 id="trust-heading" className="mx-auto mt-2 max-w-3xl font-display text-2xl font-extrabold tracking-[-0.035em] text-white sm:text-4xl">
             Know exactly what you get before you buy
           </h2>

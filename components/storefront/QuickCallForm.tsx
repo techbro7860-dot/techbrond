@@ -69,7 +69,7 @@ export function QuickCallForm() {
       <section id="quick-call" className="scroll-mt-24 rounded-2xl border border-emerald-200 bg-emerald-50 p-5 text-center shadow-card sm:p-7" aria-live="polite">
         <CheckCircle2 className="mx-auto h-9 w-9 text-emerald-600" aria-hidden="true" />
         <h2 className="mt-2 font-display text-xl font-bold text-ink">Callback request sent</h2>
-        <p className="mx-auto mt-2 max-w-lg text-sm leading-relaxed text-ink-soft">Your contact and discussion details have been emailed to the TechBro team. We’ll contact you directly.</p>
+        <p className="mx-auto mt-2 max-w-lg text-sm leading-relaxed text-ink-soft">Your contact and discussion details have been emailed to the Techbront team. We’ll contact you directly.</p>
       </section>
     );
   }

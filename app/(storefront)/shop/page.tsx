@@ -27,7 +27,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const params = parseCatalogueParams(searchParams);
   return {
-    title: "Ready-made software products with full source code | TechBro",
+    title: "Ready-made software products with full source code | Techbront",
     description:
       "Browse production-ready web and mobile applications by industry and technology stack. Every purchase includes complete source code, documentation and installation support.",
     robots: hasActiveFilters(params) ? { index: false, follow: true } : undefined,

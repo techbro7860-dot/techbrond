@@ -11,7 +11,7 @@ import type { AddonType, ServiceStatus } from "@/types/catalog";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Service details | TechBro",
+  title: "Service details | Techbront",
   robots: { index: false, follow: false },
 };
 

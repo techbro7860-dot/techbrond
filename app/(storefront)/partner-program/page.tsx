@@ -5,7 +5,7 @@ import { PartnerRegistrationForm } from "@/components/storefront/PartnerRegistra
 
 export const metadata: Metadata = {
   title: "Register as a Partner",
-  description: "Join the TechBro partner programme, refer clients or sell digital products and earn an agreed share on successful sales.",
+  description: "Join the Techbront partner programme, refer clients or sell digital products and earn an agreed share on successful sales.",
   alternates: { canonical: "/partner-program" },
 };
 
@@ -21,8 +21,8 @@ export default function PartnerProgramPage() {
       <section className="border-b border-blue-100 bg-gradient-to-br from-white via-blue-50/70 to-amber-50/40">
         <div className="mx-auto grid max-w-6xl gap-5 px-4 py-5 text-center sm:px-6 sm:py-8 lg:grid-cols-[1.05fr_.95fr] lg:items-center lg:gap-8 lg:py-10">
           <div className="flex flex-col items-center">
-            <span className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-3 py-1 text-[10px] font-extrabold uppercase tracking-[0.16em] text-accent-deep"><Handshake size={13} /> TechBro Partner Programme</span>
-            <h1 className="mt-3 max-w-2xl font-display text-[1.9rem] font-black leading-[1.05] tracking-[-0.045em] text-ink sm:text-4xl lg:text-[2.85rem]">Grow your network. <span className="text-accent">Earn with TechBro.</span></h1>
+            <span className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-3 py-1 text-[10px] font-extrabold uppercase tracking-[0.16em] text-accent-deep"><Handshake size={13} /> Techbront Partner Programme</span>
+            <h1 className="mt-3 max-w-2xl font-display text-[1.9rem] font-black leading-[1.05] tracking-[-0.045em] text-ink sm:text-4xl lg:text-[2.85rem]">Grow your network. <span className="text-accent">Earn with Techbront.</span></h1>
             <p className="mt-3 max-w-xl text-sm leading-6 text-ink-soft sm:text-base">Bring the right digital solutions to businesses and earn your agreed partner share when a sale is completed.</p>
             <Link href="#partner-application" className="btn-primary mt-4 hidden w-fit sm:inline-flex">Register as a partner <ArrowDown size={16} /></Link>
           </div>

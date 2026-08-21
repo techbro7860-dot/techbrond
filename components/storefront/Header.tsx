@@ -35,16 +35,8 @@ export async function Header() {
           <CartLink variant="icon" />
         </div>
 
-        <Link href="/" className="logotype hidden items-center gap-2 lg:flex" aria-label={`${brand.storeName} home`}>
-          {brand.logoUrl ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img src={brand.logoUrl} alt={brand.storeName} className="h-8 w-auto object-contain" />
-          ) : (
-            <>
-              <span className="grid h-8 w-8 place-items-center rounded-lg bg-accent text-sm font-extrabold text-white shadow-accent">T</span>
-              <BrandWordmark name={brand.storeName} tagline />
-            </>
-          )}
+        <Link href="/" className="logotype hidden items-center lg:flex" aria-label={`${brand.storeName} home`}>
+          <BrandWordmark name={brand.storeName} />
         </Link>
 
         <nav className="hidden items-center gap-3 text-[12px] font-semibold text-ink-soft lg:flex xl:gap-5 xl:text-sm" aria-label="Main navigation">

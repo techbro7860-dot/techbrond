@@ -36,7 +36,7 @@ export async function PATCH(req: NextRequest, { params }: { params: { id: string
       appointment.cancellationReason = String(body.reason ?? "").trim().slice(0, 500) || undefined;
       await appointment.save();
       await Promise.all([
-        sendEmail({ to: appointment.email, subject: "Your TechBro appointment was cancelled", html: cancellationEmail(appointment) }),
+        sendEmail({ to: appointment.email, subject: "Your Techbront appointment was cancelled", html: cancellationEmail(appointment) }),
         ...(adminEmail ? [sendEmail({ to: adminEmail, subject: `Appointment cancelled - ${appointment.name}`, html: cancellationEmail(appointment) })] : []),
       ]);
       return NextResponse.json({ ok: true, status: appointment.status });

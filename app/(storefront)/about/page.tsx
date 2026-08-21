@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "About us | TechBro",
+  title: "About us | Techbront",
   description:
-    "TechBro is operated by Geoloide Private Limited. We build and sell production-ready software with complete source code.",
+    "Techbront is operated by Geoloide Private Limited. We build and sell production-ready software with complete source code.",
   alternates: { canonical: "/about" },
 };
 
@@ -39,7 +39,7 @@ export default function AboutPage() {
           months.
         </p>
         <p>
-          TechBro exists for the gap between them. We build production-ready
+          Techbront exists for the gap between them. We build production-ready
           applications for common business problems — clinic management,
           course platforms, delivery tracking, lending systems — and sell them
           with the complete source code. You buy once, we rebrand it, and you
@@ -65,7 +65,7 @@ export default function AboutPage() {
         <dl className="mt-4 space-y-2.5 text-sm">
           {[
             ["Registered name", "Geoloide Private Limited"],
-            ["Trading as", "TechBro"],
+            ["Trading as", "Techbront"],
             ["CIN", "U62099MH2024PTC000000"],
             ["GSTIN", "27AAAAA0000A1Z5"],
             ["Registered office", "Pune, Maharashtra, India"],
