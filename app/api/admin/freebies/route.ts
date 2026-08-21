@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { revalidatePath } from "next/cache";
 import { connectDB } from "@/lib/db";
 import { requireAdmin } from "@/lib/middleware/requireAdmin";
 import { freeResourceSchema } from "@/lib/validations/free-resource";
@@ -21,6 +22,8 @@ export async function POST(req: NextRequest) {
     let slug = parsed.data.slug || slugify(parsed.data.title);
     if (await FreeResource.exists({ slug })) slug = `${slug}-${Date.now().toString(36).slice(-4)}`;
     const resource = await FreeResource.create({ ...parsed.data, slug });
+    revalidatePath("/freebies");
+    revalidatePath(`/freebies/${slug}`);
     return NextResponse.json({ resource }, { status: 201 });
   } catch (error) {
     console.error("POST /api/admin/freebies failed:", error);

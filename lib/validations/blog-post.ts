@@ -18,11 +18,11 @@ export const blogPostSchema = z.object({
     heading: z.string().trim().min(2).max(180),
     body: z.string().trim().min(10).max(12000),
     image: imageValue.default(""),
-  })).min(1).max(20),
+  })).max(20).default([]),
   readTime: z.coerce.number().int().min(1).max(120).default(5),
   publishedAt: z.coerce.date(),
   featured: z.boolean().default(false),
-  status: z.enum(["draft", "published"]).default("draft"),
+  status: z.enum(["draft", "published"]).default("published"),
 });
 
 export type BlogPostInput = z.infer<typeof blogPostSchema>;

@@ -16,8 +16,7 @@ export function SampleTestimonials({ testimonials, compact = false }: { testimon
     <div className="hide-scrollbar -mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-4 sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0">
       {testimonials.map((item) => (
         <article key={item._id} className={`relative min-w-[17rem] snap-start overflow-hidden rounded-2xl border border-blue-100 bg-gradient-to-br from-white to-blue-50 shadow-card sm:min-w-0 ${compact ? "p-4" : "p-5 sm:p-6"}`}>
-          <div className="flex items-center justify-between gap-3">
-            <span className="inline-flex items-center gap-1 rounded-full bg-amber-50 px-2.5 py-1 text-[9px] font-extrabold uppercase tracking-[0.12em] text-amber-700 ring-1 ring-amber-200">Sample testimonial</span>
+          <div className="flex items-center justify-end">
             <Quote className="h-5 w-5 text-blue-200" aria-hidden="true" />
           </div>
           <div className="mt-4 flex gap-0.5 text-amber-500" aria-label={`${item.rating} out of 5 stars`}>

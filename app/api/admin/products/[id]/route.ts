@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
+import { revalidatePath } from "next/cache";
+import mongoose from "mongoose";
 import { connectDB } from "@/lib/db";
 import Product from "@/models/Product";
 import License from "@/models/License";
@@ -50,6 +52,7 @@ export async function PATCH(
 ) {
   const admin = await requireAdmin(req);
   if (!admin) return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+  if (!mongoose.isValidObjectId(params.id)) return NextResponse.json({ error: "Product not found" }, { status: 404 });
 
   try {
     await connectDB();
@@ -127,9 +130,13 @@ export async function DELETE(
 ) {
   const admin = await requireAdmin(req);
   if (!admin) return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+  if (!mongoose.isValidObjectId(params.id)) return NextResponse.json({ error: "Product not found" }, { status: 404 });
 
   try {
     await connectDB();
+
+    const product = await Product.findById(params.id).select("title slug");
+    if (!product) return NextResponse.json({ error: "Product not found" }, { status: 404 });
 
     const licenseCount = await License.countDocuments({ product: params.id });
     if (licenseCount > 0) {
@@ -141,8 +148,11 @@ export async function DELETE(
       );
     }
 
-    await Product.deleteOne({ _id: params.id });
+    await Product.findByIdAndDelete(params.id);
     await recountTaxonomy();
+    revalidatePath("/");
+    revalidatePath("/shop");
+    revalidatePath(`/product/${product.slug}`);
 
     await logAdminAction({
       adminId: admin.id,

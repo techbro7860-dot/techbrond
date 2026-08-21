@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { ChevronDown, Search, SlidersHorizontal, X } from "lucide-react";
+import { Search, SlidersHorizontal, X } from "lucide-react";
 import Link from "next/link";
 
 const INDUSTRIES = [
@@ -14,7 +14,7 @@ const INDUSTRIES = [
   ["hr-recruitment", "HR & Recruitment"],
 ] as const;
 
-const POPULAR_SEARCHES = [
+const DEFAULT_POPULAR_SEARCHES = [
   "Clinic management",
   "Delivery app",
   "School ERP",
@@ -22,7 +22,7 @@ const POPULAR_SEARCHES = [
   "AI chatbot",
 ] as const;
 
-export function HomeCatalogueSearch() {
+export function HomeCatalogueSearch({ popularSearches = DEFAULT_POPULAR_SEARCHES }: { popularSearches?: readonly string[] }) {
   const [open, setOpen] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -38,16 +38,13 @@ export function HomeCatalogueSearch() {
   return (
     <div className="mx-auto max-w-4xl">
     <form ref={formRef} action="/shop" method="get" className="relative">
-      <div className="flex items-center gap-2 rounded-2xl border border-rule bg-white p-2 shadow-[0_16px_45px_rgba(8,26,58,0.14)] sm:p-2.5">
-        <Search className="ml-2 h-5 w-5 shrink-0 text-accent-deep" aria-hidden="true" />
-        <input name="q" type="search" placeholder="Search websites, apps or business software" aria-label="Search products" className="min-w-0 flex-1 border-0 bg-transparent px-1 py-2.5 text-sm text-ink outline-none placeholder:text-ink-faint sm:text-base" />
-        <button type="button" onClick={() => setOpen((value) => !value)} aria-expanded={open} className={`hidden min-h-11 items-center gap-2 rounded-xl border px-4 text-sm font-bold transition sm:inline-flex ${open ? "border-accent bg-accent-mist text-accent-deep" : "border-rule bg-white text-ink hover:border-accent"}`}>
-          <SlidersHorizontal size={17} /> Filters <ChevronDown size={15} className={open ? "rotate-180 transition" : "transition"} />
+      <div className="flex items-center gap-1.5 rounded-2xl border border-rule bg-white p-1.5 shadow-[0_16px_45px_rgba(8,26,58,0.14)] sm:gap-2 sm:p-2">
+        <input name="q" type="search" placeholder="Search websites, apps or business software" aria-label="Search products" className="min-w-0 flex-1 border-0 bg-transparent px-3 py-2.5 text-sm text-ink outline-none placeholder:text-ink-faint sm:px-4 sm:text-base" />
+        <button type="button" onClick={() => setOpen((value) => !value)} aria-expanded={open} aria-label="Refine search" title="Refine search" className={`grid h-11 w-11 shrink-0 place-items-center rounded-xl border transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${open ? "border-accent bg-accent-mist text-accent-deep" : "border-rule bg-white text-ink-soft hover:border-accent hover:text-accent-deep"}`}>
+          <SlidersHorizontal size={18} aria-hidden="true" />
         </button>
-        <button type="submit" className="btn-primary min-h-11 rounded-xl px-4 sm:px-6">Search</button>
+        <button type="submit" aria-label="Search products" title="Search products" className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-accent-deep text-white shadow-accent transition hover:bg-[#071a3d] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"><Search size={19} aria-hidden="true" /></button>
       </div>
-
-      <button type="button" onClick={() => setOpen((value) => !value)} aria-expanded={open} className="mx-auto mt-2 flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-bold text-accent-deep sm:hidden"><SlidersHorizontal size={14} /> Refine search</button>
 
       {open && (
         <div className="absolute left-0 right-0 top-[calc(100%+0.5rem)] z-30 rounded-2xl border border-rule bg-white p-4 text-left shadow-[0_22px_60px_rgba(31,38,78,0.18)] sm:p-5">
@@ -74,7 +71,7 @@ export function HomeCatalogueSearch() {
         <span className="shrink-0 pr-1 font-sans text-xs font-semibold text-accent-deep sm:text-sm">
           Popular
         </span>
-        {POPULAR_SEARCHES.map((term) => (
+        {popularSearches.map((term) => (
           <Link
             key={term}
             href={`/shop?q=${encodeURIComponent(term)}`}

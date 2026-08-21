@@ -151,9 +151,13 @@ export default async function BlogDetailPage({ params }: { params: { slug: strin
 
     {related.length > 0 && <section className="border-t border-rule-soft bg-paper-alt px-4 py-9 sm:px-6 sm:py-14"><div className="mx-auto max-w-6xl">
       <div className="flex items-end justify-between gap-4"><div><p className="label">Keep reading</p><h2 className="mt-1 font-display text-2xl font-extrabold text-ink sm:text-3xl">More practical guides</h2></div><Link href="/blog" className="hidden text-sm font-bold text-accent-deep hover:underline sm:block">View all articles</Link></div>
-      <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">{related.map((item) => <Link key={item.slug} href={`/blog/${item.slug}`} className="group grid min-h-32 grid-cols-[7rem_minmax(0,1fr)] overflow-hidden rounded-2xl border border-rule bg-white shadow-card transition hover:-translate-y-1 hover:shadow-lift sm:block">
-        {item.coverImage ? <Image src={item.coverImage} alt="" width={640} height={360} sizes="(max-width: 640px) 112px, 33vw" className="h-full min-h-32 w-full object-cover sm:aspect-[16/8] sm:h-auto sm:min-h-0" /> : <div className="h-full bg-accent-mist sm:aspect-[16/8]" />}
-        <div className="min-w-0 p-3.5 sm:p-4"><p className="text-[9px] font-bold uppercase tracking-[0.13em] text-accent-deep">{item.category}</p><h3 className="mt-1.5 line-clamp-3 font-display text-sm font-extrabold leading-snug text-ink sm:text-base">{item.title}</h3><span className="mt-3 inline-flex items-center gap-1 text-[11px] font-bold text-accent-deep sm:text-xs">Read article <ArrowRight size={12} className="transition-transform group-hover:translate-x-0.5" /></span></div>
+      <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">{related.map((item) => <Link key={item.slug} href={`/blog/${item.slug}`} className="group grid min-h-32 grid-cols-[7rem_minmax(0,1fr)] items-stretch overflow-hidden rounded-[10px] border border-rule bg-white shadow-card transition hover:-translate-y-1 hover:shadow-lift sm:flex sm:h-full sm:flex-col">
+        {item.coverImage ? <Image src={item.coverImage} alt="" width={640} height={360} sizes="(max-width: 640px) 112px, 33vw" className="aspect-square h-full min-h-32 w-full object-cover sm:aspect-[16/8] sm:h-auto sm:min-h-0" /> : <div className="aspect-square h-full bg-accent-mist sm:aspect-[16/8]" />}
+        <div className="flex min-w-0 flex-col justify-center px-4 py-3 sm:flex-1 sm:justify-start sm:p-4">
+          <p className="text-[9px] font-bold uppercase leading-none tracking-[0.13em] text-accent-deep">{item.category}</p>
+          <h3 className="mt-2 line-clamp-2 min-h-10 font-display text-sm font-extrabold leading-5 text-ink sm:text-base sm:leading-6">{item.title}</h3>
+          <span className="mt-2.5 inline-flex items-center gap-1.5 self-start text-[11px] font-bold leading-none text-accent-deep sm:mt-auto sm:pt-4 sm:text-xs">Read article <ArrowRight size={12} className="transition-transform group-hover:translate-x-0.5" /></span>
+        </div>
       </Link>)}</div>
     </div></section>}
   </main>;

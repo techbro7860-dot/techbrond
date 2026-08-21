@@ -8,6 +8,7 @@ import { getSiteSettings } from "@/lib/site-settings";
 import { TrustedBrandsSettingsForm } from "@/components/admin/TrustedBrandsSettingsForm";
 import { HeroBannersSettingsForm } from "@/components/admin/HeroBannersSettingsForm";
 import { SocialLinksSettingsForm } from "@/components/admin/SocialLinksSettingsForm";
+import { PopularSearchesSettingsForm } from "@/components/admin/PopularSearchesSettingsForm";
 
 export const dynamic = "force-dynamic";
 
@@ -111,6 +112,7 @@ export default async function AdminSettingsPage() {
       </section>
 
       <TrustedBrandsSettingsForm initial={siteSettings} />
+      <PopularSearchesSettingsForm initial={siteSettings} />
       <HeroBannersSettingsForm initial={siteSettings} />
       <SocialLinksSettingsForm initial={siteSettings} />
 

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { SingleImageUpload } from "@/components/admin/SingleImageUpload";
+import { adminFetch } from "@/lib/adminFetch";
 
 interface ProductOption { _id: string; title: string; slug: string }
 interface SampleReview {
@@ -48,13 +49,13 @@ export function ReviewManager({ initialSamples, verifiedReviews, products }: { i
   const [message, setMessage] = useState<string | null>(null);
 
   async function reloadSamples() {
-    const response = await fetch("/api/admin/testimonials");
+    const response = await adminFetch("/api/admin/testimonials");
     if (response.ok) setSamples((await response.json()).testimonials);
   }
 
   async function createSample() {
     setBusy("new"); setMessage(null);
-    const response = await fetch("/api/admin/testimonials", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(draft) });
+    const response = await adminFetch("/api/admin/testimonials", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(draft) });
     const data = await response.json();
     if (!response.ok) setMessage(data.error ?? "Could not add testimonial.");
     else { setDraft(EMPTY); await reloadSamples(); setMessage("Sample testimonial added."); }
@@ -68,7 +69,7 @@ export function ReviewManager({ initialSamples, verifiedReviews, products }: { i
   async function saveSample(item: SampleReview) {
     setBusy(item._id); setMessage(null);
     const product = typeof item.product === "string" ? item.product : item.product?._id;
-    const response = await fetch(`/api/admin/testimonials/${item._id}`, { method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ...item, product }) });
+    const response = await adminFetch(`/api/admin/testimonials/${item._id}`, { method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ...item, product }) });
     const data = await response.json();
     if (!response.ok) setMessage(data.error ?? "Could not save testimonial.");
     else { await reloadSamples(); setMessage("Changes saved."); }
@@ -78,7 +79,7 @@ export function ReviewManager({ initialSamples, verifiedReviews, products }: { i
   async function deleteSample(id: string) {
     if (!window.confirm("Delete this sample testimonial?")) return;
     setBusy(id); setMessage(null);
-    const response = await fetch(`/api/admin/testimonials/${id}`, { method: "DELETE" });
+    const response = await adminFetch(`/api/admin/testimonials/${id}`, { method: "DELETE" });
     if (response.ok) setSamples((items) => items.filter((item) => item._id !== id));
     else setMessage((await response.json()).error ?? "Could not delete testimonial.");
     setBusy(null);
@@ -87,7 +88,7 @@ export function ReviewManager({ initialSamples, verifiedReviews, products }: { i
   async function moderateVerified(id: string, status?: "published" | "hidden", remove = false) {
     if (remove && !window.confirm("Permanently delete this verified review?")) return;
     setBusy(id); setMessage(null);
-    const response = await fetch(`/api/admin/reviews/${id}`, remove ? { method: "DELETE" } : { method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ status }) });
+    const response = await adminFetch(`/api/admin/reviews/${id}`, remove ? { method: "DELETE" } : { method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ status }) });
     if (response.ok) setVerified((items) => remove ? items.filter((item) => item._id !== id) : items.map((item) => item._id === id ? { ...item, status: status! } : item));
     else setMessage((await response.json()).error ?? "Could not update review.");
     setBusy(null);
@@ -96,7 +97,7 @@ export function ReviewManager({ initialSamples, verifiedReviews, products }: { i
   async function saveVerifiedAvatar(id: string, avatar: string) {
     setVerified((items) => items.map((item) => item._id === id ? { ...item, avatar } : item));
     setBusy(id); setMessage(null);
-    const response = await fetch(`/api/admin/reviews/${id}`, { method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ avatar }) });
+    const response = await adminFetch(`/api/admin/reviews/${id}`, { method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ avatar }) });
     if (!response.ok) setMessage((await response.json()).error ?? "Could not update reviewer image.");
     else setMessage("Reviewer image saved.");
     setBusy(null);
@@ -107,10 +108,7 @@ export function ReviewManager({ initialSamples, verifiedReviews, products }: { i
       {message && <p className="rounded-xl border border-blue-100 bg-blue-50 px-4 py-3 text-sm text-accent-deep">{message}</p>}
 
       <section className="rounded-2xl bg-white p-5 shadow-card sm:p-6">
-        <div className="flex flex-wrap items-start justify-between gap-3">
-          <div><p className="label-muted">Marketing examples</p><h2 className="mt-1 font-display text-2xl font-bold text-ink">Add a sample testimonial</h2></div>
-          <span className="rounded-full bg-amber-50 px-3 py-1 text-xs font-bold text-amber-700 ring-1 ring-amber-200">Always shown as “Sample”</span>
-        </div>
+        <div><p className="label-muted">Marketing examples</p><h2 className="mt-1 font-display text-2xl font-bold text-ink">Add a sample testimonial</h2></div>
         <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <label className="block"><span className="label-muted">Placement</span><select className="field mt-1.5" value={draft.scope} onChange={(e) => setDraft({ ...draft, scope: e.target.value as "home" | "product" })}><option value="home">Homepage</option><option value="product">Product page</option></select></label>
           {draft.scope === "product" && <label className="block sm:col-span-2"><span className="label-muted">Product</span><select className="field mt-1.5" value={draft.product} onChange={(e) => setDraft({ ...draft, product: e.target.value })}><option value="">Choose product</option>{products.map((p) => <option key={p._id} value={p._id}>{p.title}</option>)}</select></label>}

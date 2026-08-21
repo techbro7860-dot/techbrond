@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { TECH_CATEGORIES, TECH_CATEGORY_LABELS, type TechCategory } from "@/types/catalog";
+import { adminFetch } from "@/lib/adminFetch";
 
 /**
  * Industries and technology tags, managed side by side.
@@ -83,7 +84,7 @@ function TaxonomyColumn({
     setError(null);
 
     try {
-      const response = await fetch(`/api/admin/taxonomy?kind=${kind}`, {
+      const response = await adminFetch(`/api/admin/taxonomy?kind=${kind}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(
@@ -108,7 +109,7 @@ function TaxonomyColumn({
     if (item.productCount > 0) return;
     setBusy(true);
     try {
-      const response = await fetch(
+      const response = await adminFetch(
         `/api/admin/taxonomy?kind=${kind}&id=${item._id}`,
         { method: "DELETE" }
       );
@@ -123,7 +124,7 @@ function TaxonomyColumn({
   async function toggle(item: Item) {
     setBusy(true);
     try {
-      await fetch(`/api/admin/taxonomy?kind=${kind}&id=${item._id}`, {
+      await adminFetch(`/api/admin/taxonomy?kind=${kind}&id=${item._id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ isActive: !item.isActive }),

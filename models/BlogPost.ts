@@ -23,7 +23,7 @@ const BlogPostSchema = new Schema(
     readTime: { type: Number, default: 5, min: 1, max: 120 },
     publishedAt: { type: Date, default: Date.now, index: true },
     featured: { type: Boolean, default: false, index: true },
-    status: { type: String, enum: ["draft", "published"], default: "draft", index: true },
+    status: { type: String, enum: ["draft", "published"], default: "published", index: true },
   },
   { timestamps: true }
 );

@@ -64,6 +64,7 @@ export interface SiteSettingsData {
     categoriesHeading: string;
     featuredHeading: string;
     trustedBrands: string[];
+    popularSearches: string[];
     highlights: Highlight[];
     banners: Banner[];
   };
@@ -142,6 +143,13 @@ export const DEFAULT_SETTINGS: SiteSettingsData = {
       "Vantara Logistics",
       "Meridian Health",
       "Orbit FinTech",
+    ],
+    popularSearches: [
+      "Clinic management",
+      "Delivery app",
+      "School ERP",
+      "Real estate CRM",
+      "AI chatbot",
     ],
     highlights: [
       { icon: "Truck", title: "Fast Shipping", subtitle: "On all orders" },

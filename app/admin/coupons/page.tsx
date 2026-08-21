@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Trash2, Pencil, X } from "lucide-react";
 import { TableSkeleton } from "@/components/ui/Skeleton";
 import { useCurrency } from "@/lib/useCurrency";
+import { adminFetch } from "@/lib/adminFetch";
 
 interface Coupon {
   _id: string;
@@ -38,7 +39,7 @@ export default function AdminCouponsPage() {
 
   async function load() {
     setLoading(true);
-    const res = await fetch("/api/coupons");
+    const res = await adminFetch("/api/coupons");
     const data = await res.json();
     setCoupons(data.coupons ?? []);
     setLoading(false);
@@ -86,7 +87,7 @@ export default function AdminCouponsPage() {
     };
 
     try {
-      const res = await fetch(editingId ? `/api/coupons/${editingId}` : "/api/coupons", {
+      const res = await adminFetch(editingId ? `/api/coupons/${editingId}` : "/api/coupons", {
         method: editingId ? "PUT" : "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
@@ -107,7 +108,7 @@ export default function AdminCouponsPage() {
 
   async function remove(id: string) {
     if (!confirm("Delete this coupon permanently?")) return;
-    const res = await fetch(`/api/coupons/${id}`, { method: "DELETE" });
+    const res = await adminFetch(`/api/coupons/${id}`, { method: "DELETE" });
     const data = await res.json();
     if (!res.ok) {
       alert(data.error || "Failed to delete coupon");
@@ -118,7 +119,7 @@ export default function AdminCouponsPage() {
   }
 
   async function toggleActive(c: Coupon) {
-    await fetch(`/api/coupons/${c._id}`, {
+    await adminFetch(`/api/coupons/${c._id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ isActive: !c.isActive }),
