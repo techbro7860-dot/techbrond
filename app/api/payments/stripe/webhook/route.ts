@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
+
+export const maxDuration = 30;
 import Stripe from "stripe";
 import { getStripe } from "@/lib/stripe";
 import { confirmPayment } from "@/lib/confirmPayment";

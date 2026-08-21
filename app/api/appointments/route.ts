@@ -4,6 +4,8 @@ import { checkRateLimit } from "@/lib/rateLimit";
 import { isEmailConfigured, sendEmail } from "@/lib/email";
 import { createGoogleMeetSpace, isGoogleMeetConfigured } from "@/lib/googleMeet";
 import Appointment from "@/models/Appointment";
+
+export const maxDuration = 30;
 import {
   APPOINTMENT_TOPICS,
   appointmentEnd,

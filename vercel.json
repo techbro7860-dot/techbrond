@@ -9,25 +9,5 @@
       "path": "/api/cron/backup",
       "schedule": "30 3 * * *"
     }
-  ],
-  "functions": {
-    "app/api/enquiries/route.ts": {
-      "maxDuration": 30
-    },
-    "app/api/partner-leads/route.ts": {
-      "maxDuration": 30
-    },
-    "app/api/appointments/route.ts": {
-      "maxDuration": 30
-    },
-    "app/api/cron/backup/route.ts": {
-      "maxDuration": 60
-    },
-    "app/api/payments/stripe/webhook/route.ts": {
-      "maxDuration": 30
-    },
-    "app/api/payments/razorpay/webhook/route.ts": {
-      "maxDuration": 30
-    }
-  }
+  ]
 }

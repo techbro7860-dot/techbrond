@@ -4,6 +4,8 @@ import { sendEmail } from "@/lib/email";
 import { checkRateLimit } from "@/lib/rateLimit";
 import PartnerLead from "@/models/PartnerLead";
 
+export const maxDuration = 30;
+
 const EMAIL_PATTERN = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 
 export async function POST(req: NextRequest) {

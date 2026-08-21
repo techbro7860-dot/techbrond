@@ -5,6 +5,8 @@ import { sendEmail } from "@/lib/email";
 import { checkRateLimit } from "@/lib/rateLimit";
 import { enquiryReceivedEmail } from "@/lib/services/notifications";
 
+export const maxDuration = 30;
+
 /**
  * POST /api/enquiries — contact form and custom-work lead capture.
  *

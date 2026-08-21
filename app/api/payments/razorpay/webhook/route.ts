@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
+
+export const maxDuration = 30;
 import crypto from "crypto";
 import { connectDB } from "@/lib/db";
 import { Order } from "@/models";
